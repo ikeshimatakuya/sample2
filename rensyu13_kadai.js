@@ -49,7 +49,6 @@ let cate2Element = document.getElementById('subMenu');
 // 商品リストを表示する要素を取得
 var itemListElement = document.getElementById('itemList');
 
-
 // --- 定義した関数 ---
 // 大分類のoptionを追加する関数
 // 課題（別のfor文に変更） 元々のコードは直下にコメントアウト
@@ -61,11 +60,11 @@ function setMainMenu(){
     cate1.forEach(
         e => {
             let option = document.createElement('option');
-            option.value = cate1[e];    // optionの値に配列の値を代入
-            option.text = cate1[e];     // optionの表示文字列に配列の値を代入
+            option.value = e;    // optionの値に配列の値を代入
+            option.text = e;     // optionの表示文字列に配列の値を代入
             cate1Element.appendChild(option); // select要素の子要素としてoption要素を追加        
         }
-    )
+    );
 }
 
 /*
@@ -87,17 +86,17 @@ function setMainMenu() {
 
 
 // 小分類のoptionを追加する関数
-// 課題（別のfor文に変更） 元々のコードは直下にコメントアウト
+// 課題（別のfor文に変更） 
 function setSubMenu(idx) {
     // 大分類の配列に保存されている数だけoptionとして追加する
     cate2.forEach(
         e => {        // option要素を新規に作成
             let option = document.createElement('option');
-            option.value = cate2[idx][e];    // optionの値に配列の値を代入
-            option.text = cate2[idx][e];     // optionの表示文字列に配列の値を代入
+            option.value = e;    // optionの値に配列の値を代入
+            option.text = e;     // optionの表示文字列に配列の値を代入
             cate2Element.appendChild(option); // select要素の子要素としてoption要素を追加     
         }
-    )
+    );
 }
 
 /*
@@ -116,7 +115,6 @@ function setSubMenu(idx) {
 }
 */
 
-
 //　商品一覧の表示の巻子
 function viewItemList(tag) {
     itemListElement.innerHTML = '';
@@ -132,6 +130,7 @@ function viewItemList(tag) {
         }
     }
 }
+
 
 //--- イベントリスナーの定義 ---
 // 大分類の選択された時のイベントリスナー
